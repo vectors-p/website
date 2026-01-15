@@ -1,15 +1,35 @@
+/* Berkshire-style minimal layout */
+
+/* 🔑 Prevent box model overflow */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 🔑 Lock horizontal scrolling */
+html {
+  width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+
 body {
+  width: 100%;
   margin: 0;
   background-color: #000000;
   color: #ffffff;
   font-family: "Times New Roman", Times, serif;
   font-size: 18px;
+  overflow-x: hidden;
 }
 
+/* Centered content column */
 .container {
   max-width: 720px;
   margin: 0 auto;
   padding: 40px 20px 80px;
+  overflow-x: hidden;
 }
 
 h1,
@@ -22,17 +42,20 @@ a {
   text-decoration: underline;
 }
 
+/* Safe horizontal rule */
 hr {
   border: none;
   border-top: 1px solid #ffffff;
   margin: 30px 0;
+  max-width: 100%;
 }
 
+/* Footer (desktop) */
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
+  right: 0; /* ✅ replaces width: 100% */
   background-color: #000000;
   border-top: 1px solid #ffffff;
   text-align: center;
@@ -40,6 +63,7 @@ footer {
   font-size: 14px;
 }
 
+/* Mobile adjustments */
 @media (max-width: 600px) {
   body {
     font-size: 16px;
@@ -49,6 +73,7 @@ footer {
     padding: 30px 16px 40px;
   }
 
+  /* Footer scrolls naturally on mobile */
   footer {
     position: static;
     margin-top: 40px;
