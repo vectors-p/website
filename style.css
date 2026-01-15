@@ -27,7 +27,6 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 40px 20px;
-  flex: 1;
 }
 
 h1,
@@ -48,6 +47,7 @@ hr {
 }
 
 footer {
+  margin-top: auto;
   background-color: #000000;
   border-top: 1px solid #ffffff;
   text-align: center;
