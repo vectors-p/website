@@ -1,13 +1,13 @@
 /* Berkshire-style minimal layout */
 
-/* 🔑 Prevent box model overflow */
+/* Prevent box model overflow */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* 🔑 Lock horizontal scrolling */
+/* Lock horizontal scrolling */
 html {
   width: 100%;
   overflow-x: hidden;
@@ -24,12 +24,11 @@ body {
   overflow-x: hidden;
 }
 
-/* Centered content column */
+/* Centered content */
 .container {
   max-width: 720px;
   margin: 0 auto;
-  padding: 40px 20px 80px;
-  overflow-x: hidden;
+  padding: 40px 20px 80px; /* space for fixed footer (desktop) */
 }
 
 h1,
@@ -42,7 +41,6 @@ a {
   text-decoration: underline;
 }
 
-/* Safe horizontal rule */
 hr {
   border: none;
   border-top: 1px solid #ffffff;
@@ -50,12 +48,12 @@ hr {
   max-width: 100%;
 }
 
-/* Footer (desktop) */
+/* Footer — FIXED ON DESKTOP */
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  right: 0; /* ✅ replaces width: 100% */
+  right: 0;
   background-color: #000000;
   border-top: 1px solid #ffffff;
   text-align: center;
@@ -63,19 +61,18 @@ footer {
   font-size: 14px;
 }
 
-/* Mobile adjustments */
+/* 🔑 MOBILE FIX: footer BELOW content */
 @media (max-width: 600px) {
   body {
     font-size: 16px;
   }
 
   .container {
-    padding: 30px 16px 40px;
+    padding: 30px 16px 40px; /* remove footer space */
   }
 
-  /* Footer scrolls naturally on mobile */
   footer {
-    position: static;
+    position: relative; /* 👈 normal document flow */
     margin-top: 40px;
   }
 }
