@@ -84,23 +84,34 @@ body.light-mode footer {
   border-top: 1px solid #000000;
 }
 
+/* Footer layout - back to centered */
 footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  margin-top: auto;
+  background-color: #000000;
+  border-top: 1px solid #ffffff;
+  text-align: center;
+  padding: 12px 10px;
+  font-size: 14px;
 }
 
+body.light-mode footer {
+  background-color: #ffffff;
+  border-top: 1px solid #000000;
+}
+
+/* Mode toggle button - fixed to top right */
 .mode-toggle {
-  position: absolute;
-  left: 10px;
-  padding: 6px 10px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
   border: 1px solid #ffffff;
   cursor: pointer;
   font-family: "Times New Roman", Times, serif;
-  font-size: 10px;
+  font-size: 14px;
   background-color: #000000;
   color: #ffffff;
+  z-index: 1000;
 }
 
 body.light-mode .mode-toggle {
