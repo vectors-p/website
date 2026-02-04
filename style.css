@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg: #000;
+  --fg: #fff;
+}
+
+body.light-mode {
+  --bg: #fff;
+  --fg: #000;
+}
+
 html {
   width: 100%;
   overflow-x: hidden;
@@ -15,8 +25,8 @@ body {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: var(--bg);
+  color: var(--fg);
   font-family: "Times New Roman", Times, serif;
   font-size: 18px;
   overflow-x: hidden;
@@ -25,7 +35,7 @@ body {
 .container {
   max-width: 720px;
   width: 100%;
-  margin: 0 auto;
+  margin-inline: auto;
   padding: 40px 20px;
 }
 
@@ -35,91 +45,46 @@ h2 {
 }
 
 a {
-  color: #ffffff;
-  text-decoration: underline;
+  color: inherit;
 }
 
 hr {
   border: none;
-  border-top: 1px solid #ffffff;
-  margin: 30px 0;
-  max-width: 100%;
+  border-top: 1px solid var(--fg);
+  margin-block: 30px;
 }
 
 footer {
   margin-top: auto;
-  background-color: #000000;
-  border-top: 1px solid #ffffff;
+  border-top: 1px solid var(--fg);
   text-align: center;
   padding: 12px 10px;
   font-size: 14px;
 }
 
-@media (max-width: 600px) {
-  body {
-    font-size: 16px;
-  }
-
-  .container {
-    padding: 30px 16px;
-  }
-}
-
-/* Light mode colors */
-body.light-mode {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-body.light-mode a {
-  color: #000000;
-}
-
-body.light-mode hr {
-  border-top: 1px solid #000000;
-}
-
-body.light-mode footer {
-  background-color: #ffffff;
-  border-top: 1px solid #000000;
-}
-
-/* Footer layout - back to centered */
-footer {
-  margin-top: auto;
-  background-color: #000000;
-  border-top: 1px solid #ffffff;
-  text-align: center;
-  padding: 12px 10px;
-  font-size: 14px;
-}
-
-body.light-mode footer {
-  background-color: #ffffff;
-  border-top: 1px solid #000000;
-}
-
-/* Mode toggle button - fixed to top right */
 .mode-toggle {
   position: fixed;
   top: 20px;
   right: 20px;
   padding: 8px 16px;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--fg);
+  background-color: var(--bg);
+  color: var(--fg);
   cursor: pointer;
-  font-family: "Times New Roman", Times, serif;
+  font-family: inherit;
   font-size: 14px;
-  background-color: #000000;
-  color: #ffffff;
   z-index: 1000;
-}
-
-body.light-mode .mode-toggle {
-  background-color: #ffffff;
-  color: #000000;
-  border: 1px solid #000000;
 }
 
 .mode-toggle:hover {
   opacity: 0.8;
+}
+
+@media (width <= 600px) {
+  body {
+    font-size: 16px;
+  }
+  .container {
+    padding: 30px 16px;
+  }
 }
