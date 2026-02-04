@@ -36,7 +36,7 @@ body {
   max-width: 720px;
   width: 100%;
   margin-inline: auto;
-  padding: 80px 40px 20px;
+  padding: 110px 40px 20px;
 }
 
 h1,
@@ -85,6 +85,6 @@ footer {
     font-size: 16px;
   }
   .container {
-    padding: 60px 30px 16px;
+    padding: 100px 30px 16px;
   }
 }
