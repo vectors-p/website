@@ -1,17 +1,14 @@
-const toggle = document.getElementById("modeToggle");
-const body = document.body;
-const savedMode = localStorage.getItem("mode");
+const t = document.getElementById("modeToggle");
+const b = document.body;
 
-if (savedMode === "light") {
-  body.classList.add("light-mode");
-  toggle.textContent = "Dark";
-} else {
-  toggle.textContent = "Light";
+if (localStorage.mode === "light") {
+  b.classList.add("light-mode");
+  t.textContent = "Dark";
 }
 
-toggle.addEventListener("click", () => {
-  body.classList.toggle("light-mode");
-  const isLight = body.classList.contains("light-mode");
-  toggle.textContent = isLight ? "Dark" : "Light";
-  localStorage.setItem("mode", isLight ? "light" : "dark");
-});
+t.onclick = () => {
+  b.classList.toggle("light-mode");
+  const light = b.classList.contains("light-mode");
+  t.textContent = light ? "Dark" : "Light";
+  localStorage.mode = light ? "light" : "dark";
+};

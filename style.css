@@ -15,9 +15,7 @@ body.light-mode {
 }
 
 html {
-  width: 100%;
   overflow-x: hidden;
-  overscroll-behavior-x: none;
 }
 
 body {
@@ -25,19 +23,17 @@ body {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--fg);
   font-family: "Times New Roman", Times, serif;
   font-size: 18px;
-  overflow-x: hidden;
   transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+    background 0.3s,
+    color 0.3s;
 }
 
 main {
   max-width: 720px;
-  width: 100%;
   margin-inline: auto;
   padding: 110px 40px 20px;
 }
@@ -47,40 +43,35 @@ h2 {
   font-weight: normal;
 }
 
-.nav-links a,
-.nav-home {
+a {
   color: inherit;
 }
 
 hr {
-  border: none;
+  border: 0;
   border-top: 1px solid var(--fg);
-  margin-block: 30px;
+  margin: 30px 0;
 }
 
 footer {
   margin-top: auto;
   border-top: 1px solid var(--fg);
   text-align: center;
-  padding: 12px 10px;
+  padding: 12px;
   font-size: 14px;
 }
 
+/* NAV */
+
 .main-nav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  inset: 0 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: var(--bg);
+  background: var(--bg);
   border-bottom: 1px solid var(--fg);
-  z-index: 999;
-  transition:
-    background-color 0.3s ease,
-    border-color 0.3s ease;
 }
 
 .nav-home {
@@ -100,8 +91,7 @@ footer {
   font-size: 16px;
 }
 
-.nav-links a:hover,
-.nav-links a:focus {
+.nav-links a:hover {
   text-decoration: underline;
 }
 
@@ -109,26 +99,20 @@ footer {
   padding: 6px 16px;
   border: 1px solid var(--fg);
   border-radius: 20px;
-  background-color: var(--bg);
+  background: var(--bg);
   color: var(--fg);
-  cursor: pointer;
-  font-family: inherit;
+  font: inherit;
   font-size: 14px;
-}
-
-.mode-toggle:hover,
-.mode-toggle:focus {
-  opacity: 0.8;
-}
-
-.mode-toggle:focus {
-  outline: 2px solid var(--fg);
-  outline-offset: 2px;
+  cursor: pointer;
 }
 
 @media (width <= 600px) {
   .main-nav {
     padding: 16px 30px;
+  }
+
+  main {
+    padding: 100px 30px 20px;
   }
 
   .nav-home {
