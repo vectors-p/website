@@ -38,31 +38,26 @@
         public communication.
       </p>
       <h2>Current Notice</h2>
-      <p><strong>Date:</strong> January 2026</p>
-      <p>
-        This notice is issued to inform concerned parties of updates,
-        announcements, or other relevant matters. Details will be added or
-        revised as required.
-      </p>
+      <p><strong>Date:</strong> February 2026</p>
       <p>Please check this page periodically for updates.</p>
+      <ul>
+        <li><a href="notice-1.pdf" target="_blank">Notice 1</a></li>
+        <li><a href="notice-2.pdf" target="_blank">Notice 2</a></li>
+        <li><a href="notice-3.pdf" target="_blank">Notice 3</a></li>
+      </ul>
       <hr />
-      <p>
-        <a href="index.html">← Back to Home</a>
-      </p>
     </main>
     <footer>© 2026 John Doe. All rights reserved.</footer>
     <script>
       const toggle = document.getElementById("modeToggle");
       const body = document.body;
       const savedMode = localStorage.getItem("mode");
-
       if (savedMode === "light") {
         body.classList.add("light-mode");
         toggle.textContent = "Dark";
       } else {
         toggle.textContent = "Light";
       }
-
       toggle.addEventListener("click", function () {
         body.classList.toggle("light-mode");
         if (body.classList.contains("light-mode")) {
