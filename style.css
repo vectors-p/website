@@ -47,7 +47,8 @@ h2 {
   font-weight: normal;
 }
 
-a {
+.nav-links a,
+.nav-home {
   color: inherit;
 }
 

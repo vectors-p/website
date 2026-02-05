@@ -48,38 +48,18 @@
         </li>
         <li>
           <a href="notices/notice-2.pdf" target="_blank" rel="noopener"
-            >Notice 1</a
+            >Notice 2</a
           >
         </li>
         <li>
           <a href="notices/notice-3.pdf" target="_blank" rel="noopener"
-            >Notice 1</a
+            >Notice 3</a
           >
         </li>
       </ul>
       <hr />
     </main>
     <footer>© 2026 John Doe. All rights reserved.</footer>
-    <script>
-      const toggle = document.getElementById("modeToggle");
-      const body = document.body;
-      const savedMode = localStorage.getItem("mode");
-      if (savedMode === "light") {
-        body.classList.add("light-mode");
-        toggle.textContent = "Dark";
-      } else {
-        toggle.textContent = "Light";
-      }
-      toggle.addEventListener("click", function () {
-        body.classList.toggle("light-mode");
-        if (body.classList.contains("light-mode")) {
-          toggle.textContent = "Dark";
-          localStorage.setItem("mode", "light");
-        } else {
-          toggle.textContent = "Light";
-          localStorage.setItem("mode", "dark");
-        }
-      });
-    </script>
+    <script src="theme.js" defer></script>
   </body>
 </html>
