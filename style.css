@@ -30,9 +30,12 @@ body {
   font-family: "Times New Roman", Times, serif;
   font-size: 18px;
   overflow-x: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
-.container {
+main {
   max-width: 720px;
   width: 100%;
   margin-inline: auto;
@@ -62,29 +65,85 @@ footer {
   font-size: 14px;
 }
 
-.mode-toggle {
+.main-nav {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  padding: 8px 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--fg);
+  z-index: 999;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.nav-home {
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  text-decoration: underline;
+}
+
+.mode-toggle {
+  padding: 6px 16px;
   border: 1px solid var(--fg);
+  border-radius: 20px;
   background-color: var(--bg);
   color: var(--fg);
   cursor: pointer;
   font-family: inherit;
   font-size: 14px;
-  z-index: 1000;
 }
 
-.mode-toggle:hover {
+.mode-toggle:hover,
+.mode-toggle:focus {
   opacity: 0.8;
 }
 
+.mode-toggle:focus {
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
+}
+
 @media (width <= 600px) {
-  body {
-    font-size: 16px;
+  .main-nav {
+    padding: 16px 30px;
   }
-  .container {
-    padding: 100px 30px 16px;
+
+  .nav-home {
+    font-size: 18px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .mode-toggle {
+    font-size: 12px;
+    padding: 4px 12px;
   }
 }

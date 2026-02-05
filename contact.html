@@ -3,57 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact</title>
+    <meta
+      name="description"
+      content="Contact information for John Doe - email and phone details"
+    />
+    <title>Contact - John Doe</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <button class="mode-toggle" id="modeToggle">Dark</button>
-    <div class="container">
+    <nav class="main-nav">
+      <a href="index.html" class="nav-home">John Doe</a>
+      <div class="nav-links">
+        <a href="notice1.html">Notices</a>
+        <a href="contact.html">Contact</a>
+        <button
+          class="mode-toggle"
+          id="modeToggle"
+          aria-label="Toggle dark/light mode"
+        >
+          Light
+        </button>
+      </div>
+    </nav>
+    <main class="container">
       <h1>Contact Information</h1>
       <hr />
-
       <p>
-        For official communication ok and inquiries, please use the contact
-        details below.
+        For official communication and inquiries, please use the contact details
+        below.
       </p>
-
       <p>
-        <strong>Email:</strong> info@example.com<br />
-        <strong>Phone:</strong> +91-XXXXXX754
+        <strong>Email:</strong>
+        <a href="mailto:info@example.com">info@example.com</a><br />
+        <strong>Phone:</strong> <a href="tel:+91XXXXXX754">+91-XXXXXX754</a>
       </p>
-
       <p>
         Correspondence is reviewed periodically. Please allow reasonable time
         for a response.
       </p>
-
       <hr />
-
       <p>
         <a href="index.html">← Back to Home</a>
       </p>
-    </div>
-
+    </main>
     <footer>© 2026 John Doe. All rights reserved.</footer>
     <script>
       const toggle = document.getElementById("modeToggle");
       const body = document.body;
-
       const savedMode = localStorage.getItem("mode");
+
       if (savedMode === "light") {
         body.classList.add("light-mode");
+        toggle.textContent = "Dark";
+      } else {
         toggle.textContent = "Light";
       }
 
       toggle.addEventListener("click", function () {
         body.classList.toggle("light-mode");
-
         if (body.classList.contains("light-mode")) {
-          toggle.textContent = "Light";
+          toggle.textContent = "Dark";
           localStorage.setItem("mode", "light");
         } else {
-          toggle.textContent = "Dark";
+          toggle.textContent = "Light";
           localStorage.setItem("mode", "dark");
         }
       });

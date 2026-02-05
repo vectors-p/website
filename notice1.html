@@ -3,59 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Notice</title>
+    <meta
+      name="description"
+      content="Official notices and announcements from John Doe"
+    />
+    <title>Notices - John Doe</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <button class="mode-toggle" id="modeToggle">Dark</button>
-    <div class="container">
-      <h1>Notice</h1>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-home">John Doe</a>
+      <div class="nav-links">
+        <a href="notice1.html">Notices</a>
+        <a href="contact.html">Contact</a>
+        <button
+          class="mode-toggle"
+          id="modeToggle"
+          aria-label="Toggle dark/light mode"
+        >
+          Light
+        </button>
+      </div>
+    </nav>
+    <main class="container">
+      <h1>Notices</h1>
       <hr />
-
       <p>
-        This page official notices and announcements issued by John Doe.
-        Information published here is intended for general reference and public
-        communication.
+        This page contains official notices and announcements issued by John
+        Doe. Information published here is intended for general reference and
+        public communication.
       </p>
-
       <h2>Current Notice</h2>
       <p><strong>Date:</strong> January 2026</p>
-
       <p>
         This notice is issued to inform concerned parties of updates,
         announcements, or other relevant matters. Details will be added or
         revised as required.
       </p>
-
       <p>Please check this page periodically for updates.</p>
-
       <hr />
-
       <p>
         <a href="index.html">← Back to Home</a>
       </p>
-    </div>
-
+    </main>
     <footer>© 2026 John Doe. All rights reserved.</footer>
     <script>
       const toggle = document.getElementById("modeToggle");
       const body = document.body;
-
       const savedMode = localStorage.getItem("mode");
+
       if (savedMode === "light") {
         body.classList.add("light-mode");
+        toggle.textContent = "Dark";
+      } else {
         toggle.textContent = "Light";
       }
 
       toggle.addEventListener("click", function () {
         body.classList.toggle("light-mode");
-
         if (body.classList.contains("light-mode")) {
-          toggle.textContent = "Light";
+          toggle.textContent = "Dark";
           localStorage.setItem("mode", "light");
         } else {
-          toggle.textContent = "Dark";
+          toggle.textContent = "Light";
           localStorage.setItem("mode", "dark");
         }
       });

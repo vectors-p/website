@@ -3,58 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Welcome</title>
+    <meta
+      name="description"
+      content="John Doe - Independent professional platform for official notices and communications"
+    />
+    <title>John Doe - Welcome</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <button class="mode-toggle" id="modeToggle">Dark</button>
-    <div class="container">
+    <nav class="main-nav">
+      <a href="index.html" class="nav-home">John Doe</a>
+      <div class="nav-links">
+        <a href="notice1.html">Notices</a>
+        <a href="contact.html">Contact</a>
+        <button
+          class="mode-toggle"
+          id="modeToggle"
+          aria-label="Toggle dark/light mode"
+        >
+          Light
+        </button>
+      </div>
+    </nav>
+    <main class="container">
       <h1>John Doe</h1>
       <p><i>Established 2026</i></p>
-
       <hr />
-
       <h2>About</h2>
       <p>
         John Doe is an independent professional platform created to publish
         information, notices, and official communications in a clear and
         reliable manner.
       </p>
-
       <p>
         This website is intentionally simple to ensure fast access, long-term
         stability, and universal compatibility across devices.
       </p>
-
-      <h2>Information</h2>
-      <ul>
-        <li><a href="notice1.html">Notices and Announcements</a></li>
-        <li><a href="contact.html">Contact Information</a></li>
-      </ul>
-
       <hr />
-    </div>
-
+    </main>
     <footer>© 2026 John Doe. All rights reserved.</footer>
     <script>
       const toggle = document.getElementById("modeToggle");
       const body = document.body;
-
       const savedMode = localStorage.getItem("mode");
+
       if (savedMode === "light") {
         body.classList.add("light-mode");
+        toggle.textContent = "Dark";
+      } else {
         toggle.textContent = "Light";
       }
 
       toggle.addEventListener("click", function () {
         body.classList.toggle("light-mode");
-
         if (body.classList.contains("light-mode")) {
-          toggle.textContent = "Light";
+          toggle.textContent = "Dark";
           localStorage.setItem("mode", "light");
         } else {
-          toggle.textContent = "Dark";
+          toggle.textContent = "Light";
           localStorage.setItem("mode", "dark");
         }
       });
