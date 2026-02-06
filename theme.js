@@ -7,15 +7,15 @@ const drawerOverlay = document.getElementById("drawerOverlay");
 const savedMode = localStorage.getItem("mode");
 if (savedMode === "light") {
   body.classList.add("light-mode");
-  toggle.innerHTML = "&#9790;";
+  toggle.textContent = "Dark";
 } else {
-  toggle.innerHTML = "&#9788;";
+  toggle.textContent = "Light";
 }
 
 toggle.addEventListener("click", () => {
   body.classList.toggle("light-mode");
   const isLight = body.classList.contains("light-mode");
-  toggle.innerHTML = isLight ? "&#9790;" : "&#9788;";
+  toggle.textContent = isLight ? "Dark" : "Light";
   localStorage.setItem("mode", isLight ? "light" : "dark");
 });
 
