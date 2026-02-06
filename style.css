@@ -188,7 +188,7 @@ footer {
     gap: 0;
     background-color: var(--bg);
     border-left: 1px solid var(--fg);
-    padding: 80px 30px calc(max(10vh, 60px) + env(safe-area-inset-bottom, 0px));
+    padding: 80px 30px 30px;
     transition: right 0.3s ease;
     z-index: 1000;
   }
@@ -212,27 +212,24 @@ footer {
     font-size: 14px;
     padding: 8px 16px;
     margin-top: auto;
-    margin-bottom: 30px;
-    margin-left: auto;
     width: fit-content;
-    position: relative;
   }
 
   .nav-links .mode-toggle {
-    position: absolute;
-    bottom: max(8vh, calc(8vh + env(safe-area-inset-bottom, 0px)));
-    right: max(5vw, 20px);
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    margin: 0;
+    font-size: 24px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: 0;
     transition: transform 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--fg);
   }
 
   .nav-links .mode-toggle:active {
