@@ -1,14 +1,50 @@
-const t = document.getElementById("modeToggle");
-const b = document.body;
+const toggle = document.getElementById("modeToggle");
+const body = document.body;
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.querySelector(".nav-links");
+const drawerOverlay = document.getElementById("drawerOverlay");
 
-if (localStorage.mode === "light") {
-  b.classList.add("light-mode");
-  t.textContent = "Dark";
+const savedMode = localStorage.getItem("mode");
+if (savedMode === "light") {
+  body.classList.add("light-mode");
+  toggle.textContent = "Dark";
+} else {
+  toggle.textContent = "Light";
 }
 
-t.onclick = () => {
-  b.classList.toggle("light-mode");
-  const light = b.classList.contains("light-mode");
-  t.textContent = light ? "Dark" : "Light";
-  localStorage.mode = light ? "light" : "dark";
-};
+toggle.addEventListener("click", () => {
+  body.classList.toggle("light-mode");
+  const isLight = body.classList.contains("light-mode");
+  toggle.textContent = isLight ? "Dark" : "Light";
+  localStorage.setItem("mode", isLight ? "light" : "dark");
+});
+
+function toggleMenu() {
+  menuToggle.classList.toggle("active");
+  navLinks.classList.toggle("active");
+  drawerOverlay.classList.toggle("active");
+
+  if (navLinks.classList.contains("active")) {
+    body.style.overflow = "hidden";
+  } else {
+    body.style.overflow = "";
+  }
+}
+
+menuToggle.addEventListener("click", toggleMenu);
+drawerOverlay.addEventListener("click", toggleMenu);
+
+const navLinksItems = navLinks.querySelectorAll("a");
+navLinksItems.forEach((link) => {
+  link.addEventListener("click", () => {
+    if (navLinks.classList.contains("active")) {
+      toggleMenu();
+    }
+  });
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && navLinks.classList.contains("active")) {
+    toggleMenu();
+  }
+});

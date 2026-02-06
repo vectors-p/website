@@ -3,34 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact – John Doe</title>
-
-    <link rel="stylesheet" href="style.css" />
+    <meta
+      name="description"
+      content="Contact information for John Doe - email and phone details"
+    />
+    <title>Contact - John Doe</title>
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📄</text></svg>"
     />
-    <script src="theme.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
     <nav class="main-nav">
       <a href="index.html" class="nav-home">John Doe</a>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
       <div class="nav-links">
         <a href="notices.html">Notices</a>
         <a href="contact.html">Contact</a>
-        <button id="modeToggle" class="mode-toggle">Light</button>
+        <button
+          class="mode-toggle"
+          id="modeToggle"
+          aria-label="Toggle dark/light mode"
+        >
+          Light
+        </button>
       </div>
     </nav>
-
-    <main>
-      <h1>Contact</h1>
+    <main class="container">
+      <h1>Contact Information</h1>
+      <hr />
+      <p>
+        For official communication and inquiries, please use the contact details
+        below.
+      </p>
       <p>
         <strong>Email:</strong>
         <a href="mailto:info@example.com">info@example.com</a><br />
-        <strong>Phone:</strong> +91-XXXXXX754
+        <strong>Phone:</strong> <a href="tel:+91XXXXXX754">+91-XXXXXX754</a>
       </p>
+      <p>
+        Correspondence is reviewed periodically. Please allow reasonable time
+        for a response.
+      </p>
+      <hr />
     </main>
-
     <footer>© 2026 John Doe. All rights reserved.</footer>
+    <script src="theme.js" defer></script>
   </body>
 </html>
