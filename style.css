@@ -205,13 +205,6 @@ footer {
     right: 0;
   }
 
-  /* Scrollable content area for links */
-  .nav-links::before {
-    content: "";
-    flex: 1;
-    min-height: 0;
-  }
-
   .nav-links a {
     font-size: 18px;
     padding: 16px 30px;
@@ -240,7 +233,10 @@ footer {
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    margin: 20px 30px 20px auto;
+    margin-top: auto;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    margin-left: auto;
     flex-shrink: 0;
     transition: transform 0.3s ease;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
