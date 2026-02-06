@@ -165,7 +165,6 @@ footer {
   opacity: 1;
 }
 
-/* Mobile styles */
 @media (width <= 600px) {
   .main-nav {
     padding: 16px 30px;
@@ -213,30 +212,11 @@ footer {
     border-top: 1px solid var(--fg);
   }
 
-  .mode-toggle {
-    font-size: 14px;
-    padding: 8px 16px;
-    width: fit-content;
-  }
-
   .nav-links .mode-toggle {
-    padding: 6px 16px;
-    border: 1px solid var(--fg);
-    border-radius: 20px;
-    background-color: var(--bg);
-    color: var(--fg);
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 14px;
     margin-top: auto;
     margin-right: 15px;
     margin-bottom: 15px;
     margin-left: auto;
     flex-shrink: 0;
-  }
-
-  .nav-links .mode-toggle:hover,
-  .nav-links .mode-toggle:focus {
-    opacity: 0.8;
   }
 }
